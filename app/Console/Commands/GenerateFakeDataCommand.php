@@ -41,7 +41,7 @@ class GenerateFakeDataCommand extends Command
                 $receipt = fake()->numberBetween(1111111111, 9999999999);
 
                 $subscription_register = $subscriptionService->register($application_client->app_id, $application_client->device_os, (string) $receipt);
-                dump($subscription_register);
+                //dump($subscription_register);
                 $subscriptionService->create($client['client_token'], $receipt, $application_client, $subscription_register);
             }
         }

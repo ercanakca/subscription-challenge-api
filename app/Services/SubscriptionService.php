@@ -20,9 +20,6 @@ class SubscriptionService
             return ['status' => false, 'message' => 'Bilinmeyen bir cihaz ile istek gönderildi.'];
         }
 
-        dump('********************');
-        dump($response);
-
         return json_decode($response->body(), true);
     }
 
@@ -43,7 +40,6 @@ class SubscriptionService
 
     public function create($client_token, $receipt, $application_client, $register_response)
     {
-        dump('123');
 
         return Subscription::create([
             'application_client_id' => $client_token,
